@@ -1,5 +1,6 @@
 /*
-In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists.
+In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do 
+and join those to create nice human readable lists.
 
 For example, here are types of famous people and the questions your data could answer:
 
@@ -9,8 +10,7 @@ Authors: What books did they write?
 Fictional characters: How are they related to other characters? What books do they show up in?
 */
 
-/* Create table about the people and what they do here */
-
+-- Create a database of soccer players
 CREATE TABLE players (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
@@ -19,6 +19,7 @@ CREATE TABLE players (
     club_id INTEGER
 );
 
+-- Insert soccer players into database
 INSERT INTO players (name, age, nationality, club_id)
 VALUES
     ("Lionel Messi", 35, "Argentina", 1),
@@ -37,7 +38,8 @@ VALUES
     ("Pity Martinez", 29, "Argentina", 2),
     ("Ousmane Dembele", 25, "France", 5)
 ;
-    
+
+-- Create a database of soccer clubs
 CREATE TABLE clubs (
     id INTEGER PRIMARY KEY,
     name TEXT,
@@ -45,6 +47,7 @@ CREATE TABLE clubs (
     league TEXT
 );
 
+-- Insert clubs into database 
 INSERT INTO clubs
 VALUES
     (1, "Paris Saint-Germain", "France", "Ligue 1"),
@@ -54,6 +57,7 @@ VALUES
     (5, "Barcelona", "Spain", "La Liga")
 ;
 
+-- Use a join to connect the 2 tables
 SELECT
     c.name, p.name, p.age
 FROM
